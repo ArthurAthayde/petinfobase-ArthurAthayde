@@ -1,0 +1,114 @@
+.toast__container {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+
+    width: 33rem;
+    height: 10rem;
+
+    box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.1);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    padding: 2rem;
+
+    animation: fadeIn 2s linear;
+}
+
+.toast__fadeout {
+    animation: fadeOut 2s linear;
+}
+
+@keyframes fadeIn {
+    0% {
+        transform: translateX(150%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(150%);
+        opacity: 0;
+    }
+}
+
+.toast__container>div {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+
+    align-self: flex-start;
+}
+
+.toast__container>div>h1 {
+    color: var(--sucess100);
+
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.toast__container>p {
+    line-height: 150%;
+}
+
+.hidden {
+    display: none;
+}
+
+/* TOAST LOGIN */
+
+.toastLogin__container {
+    height: 8rem;
+}
+
+.toastLogin__container>div {
+    align-self: center;
+}
+
+.toastLogin__container>div>h1 {
+    color: var(--alert200);
+
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+/* TOAST REGISTER ERROR */
+
+.toastRegisterError__container {
+    height: 8rem;
+}
+
+.toastRegisterError__container>div {
+    align-self: center;
+}
+
+.toastRegisterError__container>div>h1 {
+    color: var(--alert200);
+
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+/* TOAST LOGIN SUCESSO */
+.toastSuccessfullLogin__container > div{
+    align-self: center;
+}
+
+.toastSuccessfullLogin__container >p > span{
+    color: var(--brand200);
+}

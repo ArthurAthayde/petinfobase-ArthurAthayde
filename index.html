@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/styles/reset.css">
+    <link rel="stylesheet" href="./src/styles/globalStyles.css">
+    <link rel="stylesheet" href="./src/styles/toast.css">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <div class="loginForm__container">
+            <h2>Login</h2>
+            <span>Email</span>
+            <input type="text" name="email" id="email" class="login__email-input login__input" placeholder="Digite seu email aqui">
+            <span>Senha</span>
+            <input type="password" name="password" id="password" class="login__password-input login__input" placeholder="Digite sua senha aqui">
+            <button class="submitLoginBtn">Acessar</button>
+            <p>Ainda não possui conta?</p>
+            <span>Clicando no botão abaixo, você pode se cadastrar rapidamente</span>            
+            <a href="./src/pages/register.html" class="registerReplaceBtn">Cadastrar</a>
+        </div>
+        <div class="brandLogin__container">
+            <h1>Petinfo</h1>
+            <p><span>Amor</span>e <span>carinho</span> por de conhecimento</p>
+            <span>Todas as informações para melhorar a vida do seu pet em um só lugar</span>
+            <img src="./src/assets/img-login.svg" alt="">
+        </div>
+    </main>
+
+    <div class="toastLogin__container toast__container hidden">
+        <div>
+            <h1>Erro de Login</h1>
+        </div>
+         <p>Por favor, verifique seus dados.</p>
+     </div>
+
+    <div class="toastSuccessfullLogin__container toast__container hidden">
+        <div>
+            <img src="./src/assets/toastOk.svg" alt="">
+            <h1>Login efetuado com sucesso!</h1>
+        </div>
+        <p>PetInfo: <span>Amor</span> e <span>carinho</span> por meio de reconhecimento</p>
+     </div>
+
+    <script type="module" src="./src/scripts/requests.js"></script>
+    <script type="module" src="./src/scripts/index.js"></script>
+</body>
+</html>

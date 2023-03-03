@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- CSS -->
+        <link rel="stylesheet" href="../styles/reset.css">
+        <link rel="stylesheet" href="../styles/globalStyles.css">
+        <link rel="stylesheet" href="../styles/home.css">
+        <link rel="stylesheet" href="../styles/toast.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <h1>Petinfo</h1>
+        <div class="newPost__container">
+            <button class="newPostBtn">Criar publicação</button>
+            <img src="" alt="">
+        </div>
+    </header>
+    <main>
+        <h2>Feed</h2>
+        <ul class="posts__container">
+            <li class="post__container">
+                <div class="post__header">
+                    <img class="post__avatar" src="" alt="">
+                    <p class="post__username">Arthur Athayde</p>
+                    <span class="post__data">Outubro de 2022</span>
+                    <button class="editPostBtn">Editar</button>
+                    <button class="deletePostBtn">Excluir</button>
+                </div>
+                <h3 class="post__title">Outubro Rosa: Detalhes sobre a importância da prevenção do câncer de mama em
+                    cadelas e gatas</h3>
+                <p class="post__abstract">Assim como em humanos, cadelas e gatas também podem desenvolver câncer de
+                    mama. Ainda hoje, para ambas as espécies, o câncer de mama tem maior...</p>
+                <a href="">Acessar publicação</a>
+            </li>
+        </ul>
+    </main>
+
+    <div class="toastPosted__container toast__container hidden">
+        <div>
+            <img src="../assets/toastOk.svg" alt="">
+            <h1>Post criado com sucesso!</h1>
+        </div>
+        <p>Muito obrigado por compartilhar suas experiências conosco! O post que você escreveu logo aparecerá no seu feed </p>
+    </div>
+
+    <div class="toastDeleted__container toast__container hidden">
+        <div>
+            <img src="../assets/toastOk.svg" alt="">
+            <h1>Post deletado com sucesso!</h1>
+        </div>
+        <p>O post selecionado para exlusão foi deletado, a partir de agora não aparecerá no seu feed </p>
+    </div>
+
+    <script type="module" src="../scripts/requests.js"></script>
+    <script type="module" src="../scripts/home.js"></script>
+</body>
+
+</html>
