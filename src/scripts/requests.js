@@ -75,7 +75,40 @@ export async function getConnectedUser() {
     return user
 }
 
+export async function patchUser(userBody) {
+    const attUser = await fetch(`${baseUrl}/users/profile`, {
+        method: 'PATCH',
+        headers: requestHeaders,
+        body: JSON.stringify(userBody)
+    })
+        .then(response => {
+            if (response.ok) {
+                alert('Usuário atualizado com sucesso');
+            } else {
+                response.json().then(({ message }) => {
+                    alert(message);
+                })
+            }
+        })
+    return attUser;
+}
 
+export async function deleteUser() {
+    const userToDelete = await fetch(`${baseUrl}/users/profile`, {
+        method: 'DELETE',
+        headers: requestHeaders
+    })
+        .then(response => {
+            if (response.ok) {
+                alert('Usuário deletado com sucesso');
+            } else {
+                response.json().then(({ message }) => {
+                    alert(message);
+                })
+            }
+        })
+    return userToDelete;
+}
 
 export async function createPost(postBody) {
     const newPost = await fetch(`${baseUrl}/posts/create`, {
@@ -84,29 +117,29 @@ export async function createPost(postBody) {
         body: JSON.stringify(postBody)
     })
         .then((response => {
-            if(response.ok){
-                const postJson = response.json().then((responseJson) =>{
+            if (response.ok) {
+                const postJson = response.json().then((responseJson) => {
                     const toastContainer = document.querySelector('.toastPosted__container');
-                toastPosted()
+                    toastPosted()
 
-                setTimeout(() => {
-                    toastContainer.classList.add('toast__fadeout')
-                }, 4000)
+                    setTimeout(() => {
+                        toastContainer.classList.add('toast__fadeout')
+                    }, 4000)
 
-                setTimeout(() => {
-                    toastContainer.classList.add('hidden')
-                }, 5990)
-                return responseJson;
+                    setTimeout(() => {
+                        toastContainer.classList.add('hidden')
+                    }, 5990)
+                    return responseJson;
                 })
                 return postJson;
-            }else{
+            } else {
                 response.json().then(({ message }) => {
                     alert(message);
                 })
             }
         }))
 
-        return newPost
+    return newPost
 }
 
 export async function readAllPosts() {
@@ -124,4 +157,58 @@ export async function readAllPosts() {
             }
         })
     return allPosts
+}
+
+
+export async function patchPostById(postId, postBody) {
+    const post = await fetch(`${baseUrl}/posts/${postId}`, {
+        method: 'PATCH',
+        headers: requestHeaders,
+        body: JSON.stringify(postBody)
+    })
+        .then(response => {
+            if (response.ok) {
+                alert('Seu post foi atualizado com sucesso');
+
+                return response.json();
+            } else {
+                response.json().then(({ message }) => {
+                    alert(message);
+                })
+            }
+        })
+    return post;
+}
+
+
+export async function deletePostById(postId) {
+    const post = await fetch(`${baseUrl}/posts/${postId}`, {
+        method: 'DELETE',
+        headers: requestHeaders
+    })
+        .then((response => {
+            if (response.ok) {
+                const postJson = response.json().then((responseJson) => {
+                    const toastContainer = document.querySelector('.toastDeleted__container');
+                    toastDelete()
+
+                    setTimeout(() => {
+                        toastContainer.classList.add('toast__fadeout')
+                    }, 4000)
+
+                    setTimeout(() => {
+                        toastContainer.classList.add('hidden')
+                    }, 5990)
+                    return responseJson;
+                })
+                return postJson;
+            } else {
+                response.json().then(({ message }) => {
+                    alert(message);
+                })
+            }
+        }))
+
+    return post;
+
 }
