@@ -1,7 +1,7 @@
 import { toastDelete, toastLoginError, toastPosted } from "./toast.js";
 
 const baseUrl = 'http://localhost:3333';
-const token = localStorage.getItem('@petinfo:token')
+const token = JSON.parse(localStorage.getItem('@petinfo:token'))
 const requestHeaders = {
     'Content-Type': 'application/json',
     Authorization: `Bearer ${token}`
@@ -65,7 +65,11 @@ export async function getConnectedUser() {
     })
         .then(response => {
             if (response.ok) {
-                return response.json()
+                const responseJson = response.json()
+                    .then((res) => {
+                        localStorage.setItem('@petinfo:user', JSON.stringify(res));
+                    })
+                return responseJson;
             } else {
                 response.json().then(({ message }) => {
                     alert(message);

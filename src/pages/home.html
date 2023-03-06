@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- CSS -->
-        <link rel="stylesheet" href="../styles/reset.css">
-        <link rel="stylesheet" href="../styles/globalStyles.css">
-        <link rel="stylesheet" href="../styles/home.css">
-        <link rel="stylesheet" href="../styles/toast.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/globalStyles.css">
+    <link rel="stylesheet" href="../styles/home.css">
+    <link rel="stylesheet" href="../styles/toast.css">
+    <link rel="stylesheet" href="../styles/modal.css">
     <title>Document</title>
 </head>
 
@@ -36,7 +37,7 @@
                     cadelas e gatas</h3>
                 <p class="post__abstract">Assim como em humanos, cadelas e gatas também podem desenvolver câncer de
                     mama. Ainda hoje, para ambas as espécies, o câncer de mama tem maior...</p>
-                <a href="">Acessar publicação</a>
+                <button class="openModal">Acessar publicação</button>
             </li>
         </ul>
     </main>
@@ -46,7 +47,8 @@
             <img src="../assets/toastOk.svg" alt="">
             <h1>Post criado com sucesso!</h1>
         </div>
-        <p>Muito obrigado por compartilhar suas experiências conosco! O post que você escreveu logo aparecerá no seu feed </p>
+        <p>Muito obrigado por compartilhar suas experiências conosco! O post que você escreveu logo aparecerá no seu
+            feed </p>
     </div>
 
     <div class="toastDeleted__container toast__container hidden">
@@ -56,6 +58,34 @@
         </div>
         <p>O post selecionado para exlusão foi deletado, a partir de agora não aparecerá no seu feed </p>
     </div>
+
+    <dialog class="modal__controller--post">
+
+    </dialog>
+
+    <dialog class="modal__controller--newPost">
+        <div class="modal__container">
+            <h2>Criando novo post</h2>
+            <button class="newPost__closeModalBtn closeModal">X</button>
+            <p>Título do post</p>
+            <input name="title" class="newPostInput newPost__title" type="text">
+            <p>Conteúdo do post</p>
+            <textarea class="newPostInput newPost__text" name="content" id="content" cols="30" rows="10"></textarea>
+            <button class="newPost__cancelBtn closeModal">Cancelar</button>
+            <button class="newPost__submitBtn">Publicar</button>
+        </div>
+    </dialog>
+
+    <dialog class="modal__controller--delete">
+        <div class="modal__container">
+            <h2>Confirmação de exclusão</h2>
+            <button class="newPost__closeModalBtn closeModal">X</button>
+            <p>Tem certeza que deseja excluir esse post?</p>
+            <span>Essa ação não poderá ser desfeita, então pedimos que tenha cautela antes de concluir</span>
+            <button class="cancelBtn closeModal">Cancelar</button>
+            <button class="deleteBtn">Sim, excluir esse post</button>
+        </div>
+    </dialog>
 
     <script type="module" src="../scripts/requests.js"></script>
     <script type="module" src="../scripts/home.js"></script>

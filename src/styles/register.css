@@ -1,47 +1,112 @@
-main{
+main {
     display: flex;
     justify-content: center;
     align-items: center;
 
-    width: 60vw;
+    width: 100vw;
     height: 100vh;
 
-    margin: 0 auto;
-
 }
 
-.registerForm__container{
+.registerForm__container {
     display: flex;
     flex-direction: column;
+    gap: 1.5rem;
 
-    border: 1px solid var(--gray500) ;
+    padding: 2rem;
 
-    /* height: 60%; */
-    width: 23%;
 
-    padding: 2rem 1rem;
+    width: 400px;
+    height: 650px;
 
-    gap: .5rem;
+    border: solid 1px var(--gray600);
 }
 
-.registerForm__container> h2{
+.registerForm__container>h2 {
+    font-size: 1.2rem;
     font-weight: 600;
-    font-size: 1.1  rem;
-
-    margin-bottom: .5rem;
 }
 
-.registerForm__container > span{
+.registerForm__container>span {
     font-weight: 600;
     font-size: .8rem;
 }
 
-.registerForm__container > input {
-    height: 2rem;
+.registerForm__container>input {
+    padding: 1rem;
 
-    padding: 0 1rem ;
+    border: solid 1px var(--gray600);
+    border-radius: 5px;
+}
 
-    border: solid 1px var(--gray500);
+.registerBtn {
+    padding: .5rem 1rem;
 
-    margin-bottom: 1rem;
+    background-color: var(--brand200);
+
+    border: none;
+    border-radius: 5px;
+
+    color: var(--gray900);
+    font-size: 1rem;
+
+    cursor: pointer;
+}
+
+.loginReplaceBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: .5rem 1rem;
+
+    background-color: transparent;
+
+    border: solid 1px var(--gray600);
+    border-radius: 5px;
+
+    color: var(--gray100);
+    font-size: 1rem;
+    text-decoration: none;
+
+    cursor: pointer;
+}
+
+.brandRegister__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+
+    padding: 2rem;
+
+
+    width: 400px;
+    height: 650px;
+}
+
+.brandRegister__container {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.brandRegister__container>p {
+    font-size: 1.5rem;
+    font-weight: 600;
+
+    color: var(--brand200);
+}
+
+.brandRegister__container>p>span {
+    color: var(--brand200);
+}
+
+.brandRegister__container>span {
+    line-height: 150%;
+
+    color: var(--gray300);
+
+    font-size: 1rem;
+
+    font-weight: 500;
 }
